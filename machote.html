@@ -1,0 +1,282 @@
+/* =============================
+ FILE STRUCTURE
+==============================
+/website
+ ├── css/styles.css
+ ├── home.html
+ ├── services.html
+ └── careers.html
+============================== */
+
+/* =============================
+ css/styles.css
+============================== */
+:root{
+  --blue:#243c4a;
+  --gold:#d4a64f;
+  --light:#f6f4f1;
+  --text:#333;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;}
+body{background:var(--light);color:var(--text);}
+a{text-decoration:none;color:inherit;}
+
+header{background:#fff;border-bottom:4px solid var(--gold);} 
+.nav{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 20px;}
+.logo{width:190px;height:52px;background:#d9d9d9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#555;}
+.menu a{margin:0 14px;font-weight:600;color:#444;position:relative;padding-bottom:6px;}
+.menu a.active,.menu a:hover{color:var(--gold);} 
+.menu a.active::after,.menu a:hover::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--gold);} 
+.call-btn{background:var(--gold);padding:12px 22px;border-radius:30px;font-weight:700;}
+
+.hero,.page-hero{position:relative;}
+.hero-img{height:520px;background:#c7c7c7;display:flex;align-items:center;justify-content:center;font-weight:600;color:#666;font-size:18px;}
+.hero-content{position:absolute;top:50%;left:8%;transform:translateY(-50%);background:rgba(0,0,0,.55);padding:45px;border-radius:20px;max-width:560px;color:#fff;}
+.hero-content h1{font-size:44px;line-height:1.2;margin-bottom:18px;}
+.hero-content h1 span{color:var(--gold);} 
+.hero-content p{font-size:16px;margin-bottom:30px;line-height:1.6;}
+
+.btn{padding:14px 28px;border-radius:30px;font-weight:700;display:inline-block;margin-right:12px;font-size:15px;}
+.primary{background:var(--gold);color:#000;}
+.secondary{background:var(--blue);color:#fff;}
+
+section{padding:90px 20px;}
+.container{max-width:1280px;margin:auto;}
+
+h2{text-align:center;font-size:36px;margin-bottom:18px;}
+h2 span{color:var(--gold);} 
+
+.services-preview,.services-detail{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px;}
+.card,article.service{background:#fff;padding:35px;border-radius:22px;box-shadow:0 10px 25px rgba(0,0,0,.08);text-align:center;}
+.card{min-height:220px;display:flex;align-items:center;justify-content:center;font-weight:600;}
+
+.cta{background:linear-gradient(90deg,var(--blue),#1a2f3a);color:#fff;padding:35px;border-radius:22px;margin-top:70px;text-align:center;font-size:22px;font-weight:600;}
+
+.why-choose,.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px;}
+.feature,.benefit{background:#fff;padding:30px;border-radius:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.08);font-weight:600;} 
+
+.contact-careers{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:40px;}
+.contact-careers .image{height:360px;background:#cfcfcf;border-radius:22px;display:flex;align-items:center;justify-content:center;font-weight:600;}
+form input,form textarea{width:100%;padding:14px;margin-bottom:18px;border-radius:12px;border:1px solid #ccc;font-size:14px;}
+form textarea{min-height:120px;}
+form button{border:none;width:100%;cursor:pointer;}
+
+footer{background:#0f1f28;color:#fff;text-align:center;padding:30px;margin-top:80px;font-size:14px;}
+
+@media(max-width:900px){
+  .services-preview,.services-detail{grid-template-columns:1fr;}
+  .why-choose,.benefits{grid-template-columns:1fr 1fr;}
+  .hero-content{left:50%;transform:translate(-50%,-50%);}
+  .hero-img{height:420px;}
+}
+
+@media(max-width:520px){
+  .why-choose,.benefits{grid-template-columns:1fr;}
+  .hero-content h1{font-size:32px;}
+}(max-width:768px){
+  .contact-careers{grid-template-columns:1fr;}
+  .hero-content h1{font-size:30px;}
+}
+
+/* =============================
+ home.html
+============================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Caring Path</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header><div class="nav"><div class="logo">LOGO</div><nav class="menu">
+  <a href="home.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</nav><a class="call-btn">(401) 270‑1681</a></div></header>
+<section class="hero"><div class="hero-img">HOME HERO IMAGE</div><div class="hero-content"><h1>Professional & Compassionate <span>Home Care</span></h1><p>Personalized in‑home care throughout Rhode Island.</p><a class="btn primary">Get Started</a><a class="btn secondary">Our Services</a></div></section>
+<section class="container"><h2>Welcome to <span>Caring Path</span></h2><div class="services-preview"><div class="card">CNA Assistant Services</div><div class="card">Homemaker Services</div><div class="card">RN Supervision</div></div><div class="cta">Call us today to schedule a free consultation</div></section>
+<footer>© Caring Path Home Health Services</footer>
+</body>
+</html>
+
+/* =============================
+ services.html
+============================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Caring Path</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header><div class="nav"><div class="logo">LOGO</div><nav class="menu">
+  <a href="home.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</nav><a class="call-btn">(401) 270‑1681</a></div></header>
+<section class="page-hero"><div class="hero-img">SERVICES HERO IMAGE</div></section>
+<section class="container"><h2>Our <span>Home Care Services</span></h2><div class="services-detail"><article class="service">CNA Assistant Services</article><article class="service">Homemaker Services</article><article class="service">RN Supervision</article></div><div class="why-choose"><div class="feature">Licensed & State Compliant</div><div class="feature">Personalized Care</div><div class="feature">Compassionate Staff</div><div class="feature">Serving Rhode Island</div></div></section>
+<footer>© Caring Path Home Health Services</footer>
+</body>
+</html>
+
+/* =============================
+ careers.html
+============================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | Caring Path</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header><div class="nav"><div class="logo">LOGO</div><nav class="menu">
+  <a href="home.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+</nav><a class="call-btn">(401) 270‑1681</a></div></header>
+<section class="page-hero"><div class="hero-img">CAREERS HERO IMAGE</div></section>
+<section class="container"><h2>Join Our <span>Caring Team</span></h2><div class="contact-careers"><div class="image">IMAGE</div><form><input placeholder="Name"><input placeholder="Email"><input placeholder="Phone"><textarea placeholder="Message"></textarea><button class="btn primary">Send Message</button></form></div><div class="benefits"><div class="benefit">Competitive Pay</div><div class="benefit">Flexible Scheduling</div><div class="benefit">Training & Support</div><div class="benefit">Rewarding Work</div></div></section>
+<footer>© Caring Path Home Health Services</footer>
+</body>
+</html>
+
+---
+
+## 🌐 Soporte Multilenguaje (EN / ES)
+
+Se agrega un **switch de idioma** que permite cambiar todos los textos del sitio entre **Inglés y Español**, cargándolos desde archivos PHP centralizados.
+
+### 📁 Estructura de archivos
+```plaintext
+/partials/
+  header.php
+  footer.php
+/lang/
+  es.php
+  en.php
+/assets/
+  css/style.css
+  js/lang-switch.js
+index.php
+about.php
+services.php
+```
+
+---
+
+### 📝 Archivos de idioma
+
+**`/lang/es.php`**
+```php
+<?php
+return [
+  'menu_home' => 'Inicio',
+  'menu_services' => 'Servicios',
+  'menu_about' => 'Nosotros',
+  'hero_title' => 'Cuidado profesional en casa',
+  'hero_subtitle' => 'Atención humana, confiable y personalizada',
+];
+```
+
+**`/lang/en.php`**
+```php
+<?php
+return [
+  'menu_home' => 'Home',
+  'menu_services' => 'Services',
+  'menu_about' => 'About Us',
+  'hero_title' => 'Professional Home Care',
+  'hero_subtitle' => 'Human, reliable and personalized care',
+];
+```
+
+---
+
+### ⚙️ Carga dinámica del idioma
+
+En cada página principal (`index.php`, `about.php`, etc.):
+
+```php
+<?php
+session_start();
+
+$lang = $_SESSION['lang'] ?? 'en';
+$text = require __DIR__ . "/lang/$lang.php";
+?>
+```
+
+Uso en HTML:
+```php
+<h1><?= $text['hero_title']; ?></h1>
+<p><?= $text['hero_subtitle']; ?></p>
+```
+
+---
+
+### 🔘 Botón / Switch de idioma (Header)
+
+En `header.php`:
+```php
+<form method="POST" action="/lang-switch.php" class="lang-switch">
+  <button type="submit" name="lang" value="en">EN</button>
+  <button type="submit" name="lang" value="es">ES</button>
+</form>
+```
+
+**`lang-switch.php`**
+```php
+<?php
+session_start();
+
+if (isset($_POST['lang'])) {
+  $_SESSION['lang'] = $_POST['lang'];
+}
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit;
+```
+
+---
+
+### 🎨 Estilos básicos del switch
+
+```css
+.lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-switch button {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lang-switch button:hover {
+  background: #f0f0f0;
+}
+```
+
+---
+
+### ✅ Ventajas
+- Textos centralizados y escalables
+- Fácil agregar más idiomas
+- Compatible con header/footer segmentados
+- Listo para SEO y futuras mejoras (cookies, auto-detección)
+
+---
+
+👉 Siguiente paso recomendado: **convertir el switch en toggle visual (slider)** y luego **extraer header/footer como partials definitivos**.
